@@ -1,0 +1,5 @@
+#! /bin/sh
+
+sed -e \
+  "s|name=\"sender_id\"><|name=\"sender_id\">$1<|" \
+  res/values/strings.xml -i
