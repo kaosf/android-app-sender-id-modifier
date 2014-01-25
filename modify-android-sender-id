@@ -1,5 +1,11 @@
 #! /bin/sh
 
+if [ $# -lt 1 ]
+then
+  echo '1 argument (sender-id) is required.' 1>&2
+  exit 1
+fi
+
 sed -e \
   "s|name=\"sender_id\"><|name=\"sender_id\">$1<|" \
   res/values/strings.xml -i
